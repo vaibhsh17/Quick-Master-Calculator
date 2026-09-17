@@ -7,7 +7,7 @@ Quick-Master-Calculator is a modern, responsive and interactive web-based calcul
 
 <div align="center">
 
-# 🚀** Overview**
+# 🚀 **Overview**
 </div>
 
 - This calculator allows users to perform common arithmetic operations with ease. It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices. The project is lightweight, fast and does not require any external libraries or frameworks.
