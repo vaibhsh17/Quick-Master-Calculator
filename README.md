@@ -1,13 +1,13 @@
 <div align="center">
 
-# **🧮 Quick-Master-Calculator**
+# 🧮 **Quick-Master-Calculator**
 </div>
 
 Quick-Master-Calculator is a modern, responsive and interactive web-based calculator developed using HTML, CSS and JavaScript. It is designed to perform mathematical calculations quickly and efficiently through a clean and user-friendly interface. The project demonstrates the power of core web technologies by combining structure, styling and functionality into a practical and useful application.
 
 <div align="center">
 
-# **🚀 Overview**
+# 🚀** Overview**
 </div>
 
 - This calculator allows users to perform common arithmetic operations with ease. It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices. The project is lightweight, fast and does not require any external libraries or frameworks.
@@ -15,7 +15,7 @@ Quick-Master-Calculator is a modern, responsive and interactive web-based calcul
 
 <div align="center">
 
-# **✨ Features**
+# ✨ **Features**
 </div>
 
 - Addition, Subtraction, Multiplication and Division
@@ -30,7 +30,7 @@ Quick-Master-Calculator is a modern, responsive and interactive web-based calcul
 
 <div align="center">
 
-# **🛠 Technologies Used**
+# 🛠 **Technologies Used**
 </div>
 
 HTML5 – Structure and layout of the calculator <br>
@@ -39,7 +39,7 @@ JavaScript (ES6) – Calculation logic and user interactions <br>
 
 <div align="center">
 
-# **📂 Project Structure**
+# 📂 **Project Structure**
 </div>
 
 Quick-Master-Calculator/ <br>
@@ -51,7 +51,7 @@ Quick-Master-Calculator/ <br>
 
 <div align="center">
 
-# **⚙️ How It Works**
+# ⚙️ **How It Works**
 </div>
 
 - The user clicks the calculator buttons.</li>
@@ -62,14 +62,14 @@ Quick-Master-Calculator/ <br>
 
 <div align="center">
 
-# **📱 Responsive Design**
+# 📱 **Responsive Design**
 </div>
 
 - The calculator is fully responsive and adapts automatically to different screen sizes. Whether accessed on a desktop, laptop, tablet or smartphone, the interface remains clean, accessible and easy to use.
 
 <div align="center">
 
-# **🎯 Educational Value**
+# 🎯 **Educational Value**
 </div>
 
 **This project is an excellent learning resource for beginners who want to understand :**
@@ -81,14 +81,14 @@ Quick-Master-Calculator/ <br>
 - User Interface Development
 - Front-End Project Structure
 
-**💡 Why This Project Is Useful :**
+# 💡 **Why This Project Is Useful :**
 
 - The **[Quick-Master-Calculator](https://github.com/vaibhsh17/Quick-Master-Calculator)** project, simplifies everyday calculations while serving as a practical example of front-end web development.
 - It helps developers understand how HTML, CSS and JavaScript work together to build real-world applications.
 
 <div align="center">
 
-# **🔮 Future Enhancements**
+# 🔮 **Future Enhancements**
 </div>
 
 - Scientific Calculator Functions
@@ -100,14 +100,14 @@ Quick-Master-Calculator/ <br>
 
 <div align="center">
 
-# **🤝 Contributions**
+# 🤝 **Contributions**
 </div>
 
 - 👍 Contributions, suggestions and improvements are welcome to feel free to fork the repository, create a new branch and submit a pull request.
 
 <div align="center">
 
-# **💬 Purpose To Make This Project**
+# 💬 **Purpose To Make This Project**
 </div>
 
 - Quick-Master-Calculator started as a simple project to practice HTML, CSS and JavaScript. It helps to understand how structure, styling, and functionality work together to create a useful web application.
@@ -115,7 +115,7 @@ Quick-Master-Calculator/ <br>
 
 <div align="center">
 
-# **📄 License**
+# 📄 **License**
 </div>
 
 - The project **[Quick-Master-Calculator](https://github.com/vaibhsh17/Quick-Master-Calculator)** is open-source and available for educational and learning purposes.
@@ -123,7 +123,7 @@ Quick-Master-Calculator/ <br>
 
 <div align="center">
 
-# **👨‍💻 Author**
+# 👨‍💻 **Author**
 </div>
 
 - Built and maintained by **[Vaibhav](https://github.com/vaibhsh17/vaibhsh17)** for those who believe in learning through structuring, styling and functionality.
