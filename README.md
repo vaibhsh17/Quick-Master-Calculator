@@ -76,12 +76,12 @@ Quick-Master-Calculator/ <br>
 
 - **This project is an excellent learning resource for beginners who want to understand :**
 
- - DOM Manipulation
- - Event Handling
- - JavaScript Functions
- - Responsive Web Design
- - User Interface Development
- - Front-End Project Structure
+  - DOM Manipulation
+  - Event Handling
+  - JavaScript Functions
+  - Responsive Web Design
+  - User Interface Development
+  - Front-End Project Structure
 
 # 💡 **Why This Project Is Useful :**
 
