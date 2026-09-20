@@ -49,7 +49,6 @@ Quick-Master-Calculator/ <br>
 ├── calculator.html <br>
 ├── calculator.css <br>
 └── calculator.js <br>
- 
 
 <div align="center">
 
@@ -67,7 +66,8 @@ Quick-Master-Calculator/ <br>
 # 📱 **Responsive Design**
 </div>
 
-- The calculator is fully responsive and adapts automatically to different screen sizes. Whether accessed on a desktop, laptop, tablet or smartphone, the interface remains clean, accessible and easy to use.
+- The calculator is fully responsive and adapts automatically to different screen sizes.
+- Whether accessed on a desktop, laptop, tablet or smartphone, the interface remains clean, accessible and easy to use.
 
 <div align="center">
 
