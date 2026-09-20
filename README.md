@@ -35,9 +35,9 @@
 # 🛠 **Technologies Used**
 </div>
 
-HTML5 – Structure and layout of the calculator <br>
-CSS3 – Styling, responsiveness and visual appearance <br>
-JavaScript (ES6) – Calculation logic and user interactions <br>
+HTML5 – Structure and layout of the calculator
+CSS3 – Styling, responsiveness and visual appearance
+JavaScript (ES6) – Calculation logic and user interactions
 
 <div align="center">
 
@@ -55,11 +55,11 @@ Quick-Master-Calculator/ <br>
 # ⚙️ **How It Works**
 </div>
 
-- The user clicks the calculator buttons.</li>
-- JavaScript captures the input and displays it on the screen.</li>
-- Mathematical expressions are processed dynamically.</li>
-- The result is calculated instantly when the equals (=) button is pressed.</li>
-- The clear function resets the display for a new calculation.</li>
+- The user clicks the calculator buttons.
+- JavaScript captures the input and displays it on the screen.
+- Mathematical expressions are processed dynamically.
+- The result is calculated instantly when the equals (=) button is pressed.
+- The clear function resets the display for a new calculation.
 
 <div align="center">
 
