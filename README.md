@@ -35,9 +35,9 @@
 # 🛠 **Technologies Used**
 </div>
 
-HTML5 – Structure and layout of the calculator
-CSS3 – Styling, responsiveness and visual appearance
-JavaScript (ES6) – Calculation logic and user interactions
+**HTML5** – Structure and layout of the calculator.
+**CSS3** – Styling, responsiveness and visual appearance.
+**JavaScript (ES6)** – Calculation logic and user interactions.
 
 <div align="center">
 
