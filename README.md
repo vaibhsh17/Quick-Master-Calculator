@@ -48,7 +48,8 @@ Quick-Master-Calculator/ <br>
 │ <br>
 ├── calculator.html <br>
 ├── calculator.css <br>
-└── calculator.js <br>
+├── calculator.js <br>
+└── contributors.md
 
 <div align="center">
 
