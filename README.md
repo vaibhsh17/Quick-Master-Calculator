@@ -12,7 +12,9 @@
 # 🚀 **Overview**
 </div>
 
-- This calculator allows users to perform common arithmetic operations with ease. It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices. The project is lightweight, fast and does not require any external libraries or frameworks.
+- This calculator allows users to perform common arithmetic operations with ease.
+- It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices.
+- The project is lightweight, fast and does not require any external libraries or frameworks.
 - It also serves as a practical front-end project for learning DOM Manipulation, Event Handling and responsive web design.
 
 <div align="center">
@@ -129,4 +131,4 @@ Quick-Master-Calculator/ <br>
 # 👨‍💻 **Author**
 </div>
 
-- Built and maintained by **[Vaibhav](https://github.com/vaibhsh17/vaibhsh17)**
+- Built and maintained by - **[Vaibhav](https://github.com/vaibhsh17/vaibhsh17)**
