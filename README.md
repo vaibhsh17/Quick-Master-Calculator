@@ -46,12 +46,15 @@
 # 📂 **Project Structure**
 </div>
 
+<div align="center">
+
 Quick-Master-Calculator/ <br>
 │ <br>
 ├── calculator.html <br>
 ├── calculator.css <br>
 ├── calculator.js <br>
 └── contributors.md
+</div>
 
 <div align="center">
 
