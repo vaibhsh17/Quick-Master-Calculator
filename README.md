@@ -47,11 +47,11 @@
 </div>
 
 ```
-Quick-Master-Calculator/ <br>
-│ <br>
-├── calculator.html <br>
-├── calculator.css <br>
-├── calculator.js <br>
+Quick-Master-Calculator/ 
+│ 
+├── calculator.html 
+├── calculator.css 
+├── calculator.js 
 ├── contributors.md
 └── LICENCE
 ```
