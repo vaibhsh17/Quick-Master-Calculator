@@ -4,86 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Master Calculator</title>
-
     <link rel="stylesheet" href="calculator.css" />
   </head>
   <body>
-    <div class="calculator">
-      <input type="text" id="display" value="0" readonly />
-
-      <div class="calculator-body">
-        <div class="scientific-panel">
-          <button onclick="press('sin(')">sin</button>
-          <button onclick="press('cos(')">cos</button>
-          <button onclick="press('tan(')">tan</button>
-
-          <div class="mode">
-            <label><input type="radio" name="mode" checked />Deg</label>
-            <label><input type="radio" name="mode" />Rad</label>
-          </div>
-
-          <button onclick="press('asin(')">sin<sup>-1</sup></button>
-          <button onclick="press('acos(')">cos<sup>-1</sup></button>
-          <button onclick="press('atan(')">tan<sup>-1</sup></button>
-          <button onclick="press('π')">π</button>
-          <button onclick="press('e')">e</button>
-
-          <button onclick="press('^')">x<sup>y</sup></button>
-          <button onclick="press('³')">x<sup>3</sup></button>
-          <button onclick="press('²')">x<sup>2</sup></button>
-          <button onclick="press('exp(')">e<sup>x</sup></button>
-          <button onclick="press('10^')">10<sup>x</sup></button>
-
-          <button onclick="press('yroot')">ʸ√x</button>
-          <button onclick="press('cbrt(')">∛x</button>
-          <button onclick="press('sqrt(')">√x</button>
-          <button onclick="press('ln(')">ln</button>
-          <button onclick="press('log(')">log</button>
-
-          <button onclick="press('(')">(</button>
-          <button onclick="press(')')">)</button>
-          <button onclick="press('1/')">1/x</button>
-          <button onclick="press('%')">%</button>
-          <button onclick="press('!')">n!</button>
+    <main class="calculator">
+      <div class="screen">
+        <div class="status">
+          <span id="modeLabel">DEG</span>
+          <span id="memLabel" hidden>M</span>
         </div>
+        <input
+          type="text"
+          id="display"
+          value="0"
+          readonly
+          aria-label="Calculator display"
+        />
+      </div>
 
-        <div class="number-panel">
-          <button onclick="press('7')">7</button>
-          <button onclick="press('8')">8</button>
-          <button onclick="press('9')">9</button>
-          <button onclick="press('+')">+</button>
-
-          <button onclick="press('4')">4</button>
-          <button onclick="press('5')">5</button>
-          <button onclick="press('6')">6</button>
-          <button onclick="press('-')">−</button>
-
-          <button onclick="press('1')">1</button>
-          <button onclick="press('2')">2</button>
-          <button onclick="press('3')">3</button>
-          <button onclick="press('*')">×</button>
-
-          <button onclick="press('0')">0</button>
-          <button onclick="press('.')">.</button>
-          <button onclick="press('EXP')">EXP</button>
-          <button onclick="press('/')">/</button>
-
-          <button onclick="toggleSign()">±</button>
-          <button onclick="randomNumber()">RND</button>
-          <button onclick="clearDisplay()">AC</button>
-          <button class="equal" onclick="calculate()">=</button>
-        </div>
-
-        <div class="memory-panel">
-          <button onclick="backspace()">Back</button>
-          <button onclick="answer()">Ans</button>
-          <button onclick="memoryAdd()">M+</button>
-          <button onclick="memorySub()">M-</button>
-          <button onclick="memoryRecall()">MR</button>
+      <div class="toolbar">
+        <div class="mode" role="radiogroup" aria-label="Angle mode">
+          <label
+            ><input type="radio" name="mode" value="deg" checked /><span
+              >Deg</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="mode" value="rad" /><span
+              >Rad</span
+            ></label
+          >
         </div>
       </div>
-    </div>
-    
+
+      <div class="calculator-body">
+        <section class="scientific-panel" aria-label="Scientific functions">
+          <button class="fn" onclick="press('sin(')">sin</button>
+          <button class="fn" onclick="press('cos(')">cos</button>
+          <button class="fn" onclick="press('tan(')">tan</button>
+          <button class="fn" onclick="press('π')">π</button>
+          <button class="fn" onclick="press('e')">e</button>
+
+          <button class="fn" onclick="press('asin(')">sin<sup>-1</sup></button>
+          <button class="fn" onclick="press('acos(')">cos<sup>-1</sup></button>
+          <button class="fn" onclick="press('atan(')">tan<sup>-1</sup></button>
+          <button class="fn" onclick="press('(')">(</button>
+          <button class="fn" onclick="press(')')">)</button>
+
+          <button class="fn" onclick="press('^')">x<sup>y</sup></button>
+          <button class="fn" onclick="press('³')">x<sup>3</sup></button>
+          <button class="fn" onclick="press('²')">x<sup>2</sup></button>
+          <button class="fn" onclick="press('exp(')">e<sup>x</sup></button>
+          <button class="fn" onclick="press('10^')">10<sup>x</sup></button>
+
+          <button class="fn" onclick="press('yroot')"><sup>y</sup>√x</button>
+          <button class="fn" onclick="press('cbrt(')">∛x</button>
+          <button class="fn" onclick="press('sqrt(')">√x</button>
+          <button class="fn" onclick="press('ln(')">ln</button>
+          <button class="fn" onclick="press('log(')">log</button>
+
+          <button class="fn" onclick="press('1/')">1/x</button>
+          <button class="fn" onclick="press('%')">%</button>
+          <button class="fn" onclick="press('!')">n!</button>
+          <button class="fn" onclick="randomNumber()">RND</button>
+          <button class="fn" onclick="answer()">Ans</button>
+        </section>
+
+        <section class="number-panel" aria-label="Numbers and operators">
+          <button class="num" onclick="press('7')">7</button>
+          <button class="num" onclick="press('8')">8</button>
+          <button class="num" onclick="press('9')">9</button>
+          <button class="op" onclick="press('+')">+</button>
+
+          <button class="num" onclick="press('4')">4</button>
+          <button class="num" onclick="press('5')">5</button>
+          <button class="num" onclick="press('6')">6</button>
+          <button class="op" onclick="press('-')">−</button>
+
+          <button class="num" onclick="press('1')">1</button>
+          <button class="num" onclick="press('2')">2</button>
+          <button class="num" onclick="press('3')">3</button>
+          <button class="op" onclick="press('*')">×</button>
+
+          <button class="num" onclick="press('0')">0</button>
+          <button class="num" onclick="press('.')">.</button>
+          <button class="op" onclick="press('E')">EXP</button>
+          <button class="op" onclick="press('/')">÷</button>
+
+          <button class="op" onclick="toggleSign()">±</button>
+          <button class="clear" onclick="clearDisplay()">AC</button>
+          <button class="equal" onclick="calculate()">=</button>
+        </section>
+
+        <section class="memory-panel" aria-label="Memory">
+          <button class="mem" onclick="memoryClear()">MC</button>
+          <button class="mem" onclick="memoryRecall()">MR</button>
+          <button class="mem" onclick="memoryAdd()">M+</button>
+          <button class="mem" onclick="memorySub()">M-</button>
+          <button class="mem" onclick="backspace()">Back</button>
+        </section>
+      </div>
+    </main>
+
     <script src="calculator.js"></script>
   </body>
 </html>

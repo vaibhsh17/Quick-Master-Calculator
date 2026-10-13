@@ -1,102 +1,156 @@
+// ---------- State ----------
 let expression = "0";
 let memory = 0;
 let lastAnswer = 0;
+let justEvaluated = false; // true right after "=" or RND/MR, so a new digit starts fresh
 
-const display = () => document.getElementById('display');
+const display = () => document.getElementById("display");
 
-function updateDisplay() {
-  display().value = expression;
-}
+// ---------- Angle mode (one source of truth for every trig function) ----------
+const isDeg = () => document.querySelector('input[name="mode"]:checked').value === "deg";
+const toRad = (x) => (isDeg() ? (x * Math.PI) / 180 : x);
+const fromRad = (x) => (isDeg() ? (x * 180) / Math.PI : x);
+const snap = (v) => (Math.abs(v) < 1e-14 ? 0 : v); // sin(180) -> 0, not 1.2e-16
 
-function sinD(x) { return Math.sin(x * Math.PI / 180); }
-function cosD(x) { return Math.cos(x * Math.PI / 180); }
-function tanD(x) { return Math.tan(x * Math.PI / 180); }
-function asinD(x) { return Math.asin(x) * 180 / Math.PI; }
-function acosD(x) { return Math.acos(x) * 180 / Math.PI; }
-function atanD(x) { return Math.atan(x) * 180 / Math.PI; }
+const FUNCS = {
+  sin: (x) => snap(Math.sin(toRad(x))),
+  cos: (x) => snap(Math.cos(toRad(x))),
+  tan: (x) => {
+    if (isDeg() && Math.abs(x % 180) === 90) throw new Error("tan undefined");
+    return snap(Math.tan(toRad(x)));
+  },
+  asin: (x) => fromRad(Math.asin(x)),
+  acos: (x) => fromRad(Math.acos(x)),
+  atan: (x) => fromRad(Math.atan(x)),
+  sqrt: Math.sqrt,
+  cbrt: Math.cbrt,
+  ln: Math.log,
+  log: Math.log10,
+  exp: Math.exp,
+};
 
 function factorial(n) {
-  n = Math.round(n);
-  if (n < 0) return NaN;
-  if (n === 0 || n === 1) return 1;
-  let result = 1;
-  for (let i = 2; i <= n; i++) result *= i;
+  if (!Number.isInteger(n) || n < 0 || n > 170) throw new Error("factorial");
+  let r = 1;
+  for (let i = 2; i <= n; i++) r *= i;
+  return r;
+}
+
+// ---------- Evaluator (no eval, no string replacing) ----------
+const TOKEN_RE = /(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?|Ans|[a-z]+|ʸ√|[π²³!%^+\-*/()]/g;
+const STARTS_FACTOR = /^(?:[\d.]|π|Ans|[a-z]|\()/;
+
+function evaluate(src) {
+  const tokens = src.match(TOKEN_RE) || [];
+  if (tokens.join("") !== src) throw new Error("invalid input");
+  let i = 0;
+  const peek = () => tokens[i];
+  const next = () => tokens[i++];
+
+  const parseExpr = () => {
+    let v = parseTerm();
+    while (peek() === "+" || peek() === "-") {
+      const op = next();
+      const r = parseTerm();
+      v = op === "+" ? v + r : v - r;
+    }
+    return v;
+  };
+
+  const parseTerm = () => {
+    let v = parseUnary();
+    for (;;) {
+      const t = peek();
+      if (t === "*" || t === "/") {
+        next();
+        const r = parseUnary();
+        v = t === "*" ? v * r : v / r;
+      } else if (t && STARTS_FACTOR.test(t)) {
+        v *= parseUnary(); // implicit multiplication: 2π, 3sin(30)
+      } else return v;
+    }
+  };
+
+  const parseUnary = () => {
+    if (peek() === "-") { next(); return -parseUnary(); }
+    if (peek() === "+") { next(); return parseUnary(); }
+    return parsePower();
+  };
+
+  const parsePower = () => {
+    const base = parsePostfix();
+    if (peek() === "^") { next(); return Math.pow(base, parseUnary()); }
+    if (peek() === "ʸ√") { next(); return Math.pow(parseUnary(), 1 / base); } // 3ʸ√27 = 3
+    return base;
+  };
+
+  const parsePostfix = () => {
+    let v = parsePrimary();
+    for (;;) {
+      const t = peek();
+      if (t === "!") { next(); v = factorial(v); }
+      else if (t === "%") { next(); v /= 100; }
+      else if (t === "²") { next(); v = v ** 2; }
+      else if (t === "³") { next(); v = v ** 3; }
+      else return v;
+    }
+  };
+
+  const parsePrimary = () => {
+    const t = next();
+    if (t === undefined) throw new Error("incomplete");
+    if (/^[\d.]/.test(t)) return parseFloat(t);
+    if (t === "π") return Math.PI;
+    if (t === "e") return Math.E;
+    if (t === "Ans") return lastAnswer;
+    if (t === "(") {
+      const v = parseExpr();
+      if (peek() === ")") next(); // forgive a missing closing bracket
+      return v;
+    }
+    if (FUNCS[t] && peek() === "(") {
+      next();
+      const v = parseExpr();
+      if (peek() === ")") next();
+      return FUNCS[t](v);
+    }
+    throw new Error("unexpected " + t);
+  };
+
+  const result = parseExpr();
+  if (i < tokens.length) throw new Error("unexpected " + tokens[i]);
+  if (!isFinite(result)) throw new Error("math error");
   return result;
 }
 
-function isDegreeMode() {
-  const radios = document.querySelectorAll('input[name="mode"]');
-
-  return radios.length > 0 ? radios[0].checked : true;
-}
-
+// ---------- Display ----------
 function formatNumber(num) {
-  if (!isFinite(num)) return "Error";
   if (Number.isInteger(num)) return num.toString();
   return parseFloat(num.toPrecision(12)).toString();
 }
 
-function preprocess(expr) {
-  let s = expr;
-
-  s = s.replace(/([0-9]*\.?[0-9]+)ʸ√([0-9]*\.?[0-9]+)/g, "Math.pow($2,1/($1))");
-
-  s = s.split('Ans').join('(' + lastAnswer + ')');
-
-  s = s.split('exp(').join('§EXPFN§');
-
-  s = s.replace(/e/g, 'Math.E');
-
-  s = s.split('§EXPFN§').join('Math.exp(');
-
-  s = s.split('EXP').join('e');
-
-  s = s.split('π').join('Math.PI');
-
-  const deg = isDegreeMode();
-  s = s.split('asin(').join(deg ? 'asinD(' : 'Math.asin(');
-  s = s.split('acos(').join(deg ? 'acosD(' : 'Math.acos(');
-  s = s.split('atan(').join(deg ? 'atanD(' : 'Math.atan(');
-  s = s.split('sin(').join(deg ? 'sinD(' : 'Math.sin(');
-  s = s.split('cos(').join(deg ? 'cosD(' : 'Math.cos(');
-  s = s.split('tan(').join(deg ? 'tanD(' : 'Math.tan(');
-
-  s = s.split('sqrt(').join('Math.sqrt(');
-  s = s.split('cbrt(').join('Math.cbrt(');
-  s = s.split('ln(').join('Math.log(');
-  s = s.split('log(').join('Math.log10(');
-
-  s = s.split('^').join('**');
-
-  s = s.split('²').join('**2');
-  s = s.split('³').join('**3');
-
-  s = s.replace(/([0-9]*\.?[0-9]+)!/g, 'factorial($1)');
-
-  s = s.replace(/([0-9]*\.?[0-9]+)%/g, '($1/100)');
-
-  return s;
+function updateDisplay() {
+  const d = display();
+  d.value = expression;
+  d.scrollLeft = d.scrollWidth; // keep the latest characters visible
 }
 
-function safeEval(expr) {
-  const s = preprocess(expr);
-
-  const fn = new Function(
-    'Math', 'sinD', 'cosD', 'tanD', 'asinD', 'acosD', 'atanD', 'factorial',
-    `"use strict"; return (${s});`
-  );
-  const result = fn(Math, sinD, cosD, tanD, asinD, acosD, atanD, factorial);
-  if (typeof result !== 'number' || isNaN(result)) throw new Error('Math Error');
-  return result;
+function updateStatus() {
+  document.getElementById("modeLabel").textContent = isDeg() ? "DEG" : "RAD";
+  document.getElementById("memLabel").hidden = memory === 0;
 }
+
+// ---------- Input ----------
+const CONTINUES_RESULT = /^(?:[+\-*/^²³!%]|ʸ√)/;
 
 function press(val) {
+  const token = val === "yroot" ? "ʸ√" : val;
   if (expression === "Error") expression = "0";
 
-  let token = val;
-  if (val === 'yroot') token = 'ʸ√';
+  if (justEvaluated && !CONTINUES_RESULT.test(token)) expression = "0";
+  justEvaluated = false;
 
-  if (expression === "0" && !"+-*/^".includes(token[0])) {
+  if (expression === "0" && token !== "." && !CONTINUES_RESULT.test(token)) {
     expression = token;
   } else {
     expression += token;
@@ -106,74 +160,80 @@ function press(val) {
 
 function calculate() {
   try {
-    const result = safeEval(expression);
+    const result = evaluate(expression);
     lastAnswer = result;
     expression = formatNumber(result);
   } catch (e) {
     expression = "Error";
   }
+  justEvaluated = true;
   updateDisplay();
 }
 
 function clearDisplay() {
   expression = "0";
+  justEvaluated = false;
   updateDisplay();
 }
 
 function backspace() {
-  if (expression === "Error" || expression.length <= 1) {
-    expression = "0";
-  } else {
-    expression = expression.slice(0, -1);
-    if (expression === "") expression = "0";
-  }
+  if (expression === "Error") expression = "0";
+  else expression = expression.replace(/(?:asin|acos|atan|sin|cos|tan|sqrt|cbrt|ln|log|exp)\($|Ans$|ʸ√$|.$/, "") || "0";
+  justEvaluated = false;
   updateDisplay();
 }
 
 function toggleSign() {
-  if (expression === "0") return;
-  if (expression.startsWith('-')) {
-    expression = expression.slice(1);
-  } else {
-    expression = '-' + expression;
-  }
+  if (expression === "0" || expression === "Error") return;
+  if (/^-\(.*\)$/.test(expression)) expression = expression.slice(2, -1);
+  else if (/^-[\d.]+$/.test(expression)) expression = expression.slice(1);
+  else if (/^[\d.]+$/.test(expression)) expression = "-" + expression;
+  else expression = "-(" + expression + ")";
   updateDisplay();
 }
 
 function randomNumber() {
-  expression = Math.random().toString();
+  expression = Math.random().toFixed(6);
+  justEvaluated = true;
   updateDisplay();
 }
 
-function answer() {
-  if (expression === "0") {
-    expression = "Ans";
-  } else {
-    expression += "Ans";
-  }
-  updateDisplay();
-}
+function answer() { press("Ans"); }
 
-function memoryAdd() {
+// ---------- Memory ----------
+function memoryChange(sign) {
   try {
-    memory += safeEval(expression);
-  } catch (e) {}
+    memory += sign * evaluate(expression);
+    updateStatus();
+  } catch (e) { /* ignore invalid expressions */ }
 }
-
-function memorySub() {
-  try {
-    memory -= safeEval(expression);
-  } catch (e) {}
-}
+const memoryAdd = () => memoryChange(1);
+const memorySub = () => memoryChange(-1);
 
 function memoryRecall() {
-  const val = formatNumber(memory);
-  if (expression === "0") {
-    expression = val;
-  } else {
-    expression += val;
-  }
-  updateDisplay();
+  press(formatNumber(memory));
 }
 
-document.addEventListener('DOMContentLoaded', updateDisplay);
+function memoryClear() {
+  memory = 0;
+  updateStatus();
+}
+
+// ---------- Keyboard support ----------
+document.addEventListener("keydown", (e) => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key;
+  if (/^[0-9.+\-*/^()!%]$/.test(k)) press(k);
+  else if (k === "Enter" || k === "=") calculate();
+  else if (k === "Backspace") backspace();
+  else if (k === "Escape") clearDisplay();
+  else return;
+  e.preventDefault();
+});
+
+// ---------- Init ----------
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", updateStatus));
+  updateDisplay();
+  updateStatus();
+});
