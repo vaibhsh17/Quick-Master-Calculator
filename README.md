@@ -52,7 +52,8 @@ Quick-Master-Calculator/ <br>
 ├── calculator.html <br>
 ├── calculator.css <br>
 ├── calculator.js <br>
-└── contributors.md
+├── contributors.md
+└── LICENCE
 ```
 
 <div align="center">
