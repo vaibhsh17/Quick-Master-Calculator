@@ -4,3 +4,5 @@
 
 > *This is a responsive web application, you can use it for calculations.*<br>
 > *Contributtors are most welcome to contribute on the repo for changement, function arrangement and add features.*
+
+> *This list shows who contribrutes in the repo.*

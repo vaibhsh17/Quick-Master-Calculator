@@ -1,109 +1,137 @@
-<h2>🧮 Quick-Master-Calculator</h2>
+<div align="center">
 
-Quick-Master-Calculator is a modern, responsive and interactive web-based calculator developed using HTML, CSS and JavaScript. It is designed to perform mathematical calculations quickly and efficiently through a clean and user-friendly interface. The project demonstrates the power of core web technologies by combining structure, styling and functionality into a practical and useful application.
+# 🧮 **Quick-Master-Calculator**
+</div>
 
-<h2>🚀 Overview</h2>
+- Quick-Master-Calculator is a modern, responsive and interactive web-based calculator developed using HTML, CSS and JavaScript.
+- It is designed to perform mathematical calculations quickly and efficiently through a clean and user-friendly interface.
+- The project demonstrates the power of core web technologies by combining structure, styling and functionality into a practical and useful application.
 
-<ul>
-  <li> This calculator allows users to perform common arithmetic operations with ease. It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices. The project is lightweight, fast and does not require any external libraries or frameworks.</li>
-  <li> It also serves as a practical front-end project for learning DOM Manipulation, Event Handling and responsive web design.</li>
-</ul>
+<div align="center">
 
-<h2>✨ Features</h2>
+# 🚀 **Overview**
+</div>
 
-<ul>
-  <li> Addition, Subtraction, Multiplication and Division</li>
-  <li> Percentage Calculations</li>
-  <li> Decimal Number Support</li>
-  <li> Real-Time Input and Output</li>
-  <li> Clear and Delete Functions</li>
-  <li> Responsive Design for Mobile, Tablet and Desktop</li>
-  <li> Clean and Modern User Interface</li>
-  <li> Fast and Lightweight Performance</li>
-  <li> Easy-to-Understand Code Structure</li>
-</ul>
+- This calculator allows users to perform common arithmetic operations with ease.
+- It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices.
+- The project is lightweight, fast and does not require any external libraries or frameworks.
+- It also serves as a practical front-end project for learning DOM Manipulation, Event Handling and responsive web design.
 
-<h2>🛠 Technologies Used</h2>
+<div align="center">
 
-HTML5 – Structure and layout of the calculator <br>
-CSS3 – Styling, responsiveness and visual appearance <br>
-JavaScript (ES6) – Calculation logic and user interactions <br>
+# ✨ **Features**
+</div>
 
-<h2>📂 Project Structure</h2>
+- Addition, Subtraction, Multiplication and Division
+- Percentage Calculations
+- Decimal Number Support
+- Real-Time Input and Output
+- Clear and Delete Functions
+- Responsive Design for Mobile, Tablet and Desktop
+- Clean and Modern User Interface
+- Fast and Lightweight Performance
+- Easy-to-Understand Code Structure
 
-Quick-Master-Calculator/ <br>
-│ <br>
-├── calculator.html <br>
-├── calculator.css <br>
-├── calculator.js <br>
-└── README.md <br>
+<div align="center">
 
-<h2>⚙️ How It Works</h2>
+# 🛠 **Technologies Used**
+</div>
 
-<ol>
-  <li> The user clicks the calculator buttons.</li>
-  <li> JavaScript captures the input and displays it on the screen.</li>
-  <li> Mathematical expressions are processed dynamically.</li>
-  <li> The result is calculated instantly when the equals (=) button is pressed.</li>
-  <li> The clear function resets the display for a new calculation.</li>
-</ol>
+- **HTML5** – Structure and layout of the calculator.
+- **CSS3** – Styling, responsiveness and visual appearance.
+- **JavaScript (ES6)** – Calculation logic and user interactions.
 
-<h2>📱 Responsive Design</h2>
+<div align="center">
 
-<ul>
-  <li> The calculator is fully responsive and adapts automatically to different screen sizes. Whether accessed on a desktop, laptop, tablet or smartphone, the interface remains clean, accessible and easy to use.</li>
-</ul>
+# 📂 **Project Structure**
+</div>
 
-<h2>🎯 Educational Value</h2>
+```
+Quick-Master-Calculator/ 
+│ 
+├── calculator.html 
+├── calculator.css 
+├── calculator.js 
+├── contributors.md
+└── LICENCE
+```
 
-<strong>This project is an excellent learning resource for beginners who want to understand</strong> :
+<div align="center">
 
-<ol>
-  <li> DOM Manipulation</li>
-  <li> Event Handling</li>
-  <li> JavaScript Functions</li>
-  <li> Responsive Web Design</li>
-  <li> User Interface Development</li>
-  <li> Front-End Project Structure</li>
-</ol>
+# ⚙️ **How It Works**
+</div>
 
-<strong>💡 Why This Project Is Useful</strong> : 
+- The user clicks the calculator buttons.
+- JavaScript captures the input and displays it on the screen.
+- Mathematical expressions are processed dynamically.
+- The result is calculated instantly when the equals (=) button is pressed.
+- The clear function resets the display for a new calculation.
 
-<ul>
-  <li>The "Quick-Master-Calculator" project, simplifies everyday calculations while serving as a practical example of front-end web development. It helps developers understand how HTML, CSS and JavaScript work together to build real-world applications.</li>
-</ul>
+<div align="center">
 
-<h2>🔮 Future Enhancements</h2>
+# 📱 **Responsive Design**
+</div>
 
-<ul>
-  <li> Scientific Calculator Functions</li>
-  <li> Calculation History</li>
-  <li> Keyboard Support</li>
-  <li> Dark/Light Theme Toggle</li>
-  <li> Memory Functions (M+, M-, MR, MC)</li>
-  <li> Advanced Mathematical Operations</li>
-</ul>
+- The calculator is fully responsive and adapts automatically to different screen sizes.
+- Whether accessed on a desktop, laptop, tablet or smartphone, the interface remains clean, accessible and easy to use.
 
-<h2>🤝 Contributions</h2>
+<div align="center">
 
-👍 Contributions, suggestions and improvements are welcome to feel free to fork the repository, create a new branch and submit a pull request.
+# 🎯 **Educational Value**
+</div>
 
-<h2>💬 Purpose To Make This Project</h2>
+- **This project is an excellent learning resource for beginners who want to understand :**
 
-<ul>
-  <li> Quick-Master-Calculator started as a simple project to practice HTML, CSS and JavaScript. It helps to understand how structure, styling, and functionality work together to create a useful web application. </li>
-  <li> This project reflects my learning journey in front-end development while providing a fast and responsive calculator for everyday use.</li>
-</ul>
+  - DOM Manipulation
+  - Event Handling
+  - JavaScript Functions
+  - Responsive Web Design
+  - User Interface Development
+  - Front-End Project Structure
 
-<h2>📄 License</h2>
+# 💡 **Why This Project Is Useful :**
 
-<ul>
-  <li>The project "Quick-Master-Calculator" is open-source and available for educational and learning purposes.
-</li>
-</ul>
+- The **[Quick-Master-Calculator](https://github.com/vaibhsh17/Quick-Master-Calculator)** project, simplifies everyday calculations while serving as a practical example of front-end web development.
+- It helps developers understand how HTML, CSS and JavaScript work together to build real-world applications.
 
-<h2>👨‍💻 Author</h2>
+<div align="center">
 
-<ul>
-  <li>Built and maintained by <strong>Vaibhav</strong>, for those who believe in learning through structuring, styling and functionality.</li>
-</ul>
+# 🔮 **Future Enhancements**
+</div>
+
+- Scientific Calculator Functions
+- Calculation History
+- Keyboard Support
+- Dark/Light Theme Toggle
+- Memory Functions (M+, M-, MR, MC)
+- Advanced Mathematical Operations
+
+<div align="center">
+
+# 🤝 **Contributions**
+</div>
+
+- 👍 Contributions, suggestions and improvements are welcome to feel free to fork the repository, create a new branch and submit a pull request.
+
+<div align="center">
+
+# 💬 **Purpose To Make This Project**
+</div>
+
+- Quick-Master-Calculator started as a simple project to practice HTML, CSS and JavaScript. It helps to understand how structure, styling, and functionality work together to create a useful web application.
+- This project reflects my learning journey in front-end development while providing a fast and responsive calculator for everyday use.
+
+<div align="center">
+
+# 📄 **License**
+</div>
+
+- The project **[Quick-Master-Calculator](https://github.com/vaibhsh17/Quick-Master-Calculator)** is open-source and available for educational and learning purposes.
+- See [LICENCE](https://github.com/vaibhsh17/Quick-Master-Calculator/blob/main/LICENSE) file for more details.
+
+<div align="center">
+
+# 👨‍💻 **Author**
+</div>
+
+- Built and maintained by - **[Vaibhav](https://github.com/vaibhsh17/vaibhsh17)**
