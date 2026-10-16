@@ -7,7 +7,8 @@ let justEvaluated = false; // true right after "=" or RND/MR, so a new digit sta
 const display = () => document.getElementById("display");
 
 // ---------- Angle mode (one source of truth for every trig function) ----------
-const isDeg = () => document.querySelector('input[name="mode"]:checked').value === "deg";
+let angleMode = "deg";
+const isDeg = () => angleMode === "deg";
 const toRad = (x) => (isDeg() ? (x * Math.PI) / 180 : x);
 const fromRad = (x) => (isDeg() ? (x * 180) / Math.PI : x);
 const snap = (v) => (Math.abs(v) < 1e-14 ? 0 : v); // sin(180) -> 0, not 1.2e-16
@@ -135,8 +136,18 @@ function updateDisplay() {
   d.scrollLeft = d.scrollWidth; // keep the latest characters visible
 }
 
+function setMode(mode) {
+  angleMode = mode;
+  updateStatus();
+}
+
 function updateStatus() {
   document.getElementById("modeLabel").textContent = isDeg() ? "DEG" : "RAD";
+  for (const m of ["deg", "rad"]) {
+    const btn = document.getElementById(m + "Btn");
+    btn.classList.toggle("active", angleMode === m);
+    btn.setAttribute("aria-pressed", angleMode === m);
+  }
   document.getElementById("memLabel").hidden = memory === 0;
 }
 
@@ -144,7 +155,7 @@ function updateStatus() {
 const CONTINUES_RESULT = /^(?:[+\-*/^²³!%]|ʸ√)/;
 
 function press(val) {
-  const token = val === "yroot" ? "ʸ√" : val;
+  const token = val;
   if (expression === "Error") expression = "0";
 
   if (justEvaluated && !CONTINUES_RESULT.test(token)) expression = "0";
@@ -231,9 +242,30 @@ document.addEventListener("keydown", (e) => {
   e.preventDefault();
 });
 
+// ---------- Button clicks (one listener for every button) ----------
+const ACTIONS = {
+  equals: calculate,
+  clear: clearDisplay,
+  back: backspace,
+  sign: toggleSign,
+  random: randomNumber,
+  ans: answer,
+  mc: memoryClear,
+  mr: memoryRecall,
+  mplus: memoryAdd,
+  mminus: memorySub,
+};
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  if (btn.dataset.key !== undefined) press(btn.dataset.key);
+  else if (btn.dataset.action) ACTIONS[btn.dataset.action]();
+  else if (btn.dataset.mode) setMode(btn.dataset.mode);
+});
+
 // ---------- Init ----------
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", updateStatus));
   updateDisplay();
   updateStatus();
 });

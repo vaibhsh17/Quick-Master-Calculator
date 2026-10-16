@@ -14,6 +14,15 @@
   --clear: #f3d3d0;
   --clear-hover: #ecbcb7;
   --row: 52px;
+
+  /* Footer colours: change these to restyle the footer */
+  --footer-bg: #22405f;
+  --footer-text: #c5d6ea;
+  --footer-heading: #ffffff;
+  --footer-line: rgba(255, 255, 255, 0.2);
+  --footer-link: #9fc9f5;
+  --footer-kbd-bg: rgba(255, 255, 255, 0.12);
+  --footer-kbd-border: rgba(255, 255, 255, 0.4);
 }
 
 * {
@@ -26,8 +35,10 @@
 body {
   background: var(--page);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 18px;
   min-height: 100vh;
   padding: 24px;
 }
@@ -69,7 +80,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Deg / Rad segmented toggle */
+/* Deg / Rad toggle */
 .toolbar {
   display: flex;
   justify-content: flex-end;
@@ -84,32 +95,21 @@ body {
   background: #fff;
 }
 
-.mode label {
-  cursor: pointer;
-}
-
-.mode input {
-  position: absolute;
-  opacity: 0;
-}
-
-.mode span {
-  display: block;
-  padding: 7px 22px;
-  font-size: 15px;
-  font-weight: 600;
+.mode-btn {
+  border: none;
+  border-radius: 0;
+  background: #fff;
   color: #35506e;
-  transition: background 0.15s, color 0.15s;
+  padding: 8px 26px;
+  font-size: 15px;
 }
 
-.mode input:checked + span {
+.mode-btn:hover { background: var(--fn-hover); }
+
+.mode-btn.active,
+.mode-btn.active:hover {
   background: var(--accent);
   color: #fff;
-}
-
-.mode input:focus-visible + span {
-  outline: 2px solid var(--accent);
-  outline-offset: -3px;
 }
 
 /* Layout: three panels, every grid has 5 equal rows so they line up */
@@ -167,6 +167,85 @@ button sup { font-size: 11px; }
   font-size: 24px;
 }
 .equal:hover { background: var(--accent-hover); }
+
+/* Footer */
+.site-footer {
+  width: min(980px, 100%);
+  padding: 16px 18px;
+  text-align: center;
+  background: var(--footer-bg);
+  border-radius: 10px;
+  color: var(--footer-text);
+  font-size: 14px;
+  box-shadow: 0 6px 24px rgba(20, 40, 70, 0.18);
+}
+
+.footer-top,
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.footer-top {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--footer-line);
+}
+
+.footer-bottom {
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.footer-brand strong {
+  color: var(--footer-heading);
+  font-size: 16px;
+}
+
+.footer-tips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  list-style: none;
+}
+
+kbd {
+  margin-right: 4px;
+  padding: 1px 7px;
+  background: var(--footer-kbd-bg);
+  border: 1px solid var(--footer-kbd-border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  color: var(--footer-heading);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.site-footer a {
+  color: var(--footer-link);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-footer a:hover { text-decoration: underline; }
+.site-footer a:focus-visible { outline: 2px solid var(--footer-link); outline-offset: 2px; border-radius: 2px; }
 
 /* Tablet: stack the panels */
 @media (max-width: 1000px) {

@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Quick Master Calculator: a fast scientific calculator with Deg/Rad modes, memory and keyboard support."
+    />
     <title>Quick Master Calculator</title>
     <link rel="stylesheet" href="calculator.css" />
+    <script src="calculator.js" defer></script>
   </head>
   <body>
-    <main class="calculator">
+    <noscript>Please enable JavaScript to use the calculator.</noscript>
+
+    <main class="calculator" aria-label="Scientific calculator">
+      <!-- Display -->
       <div class="screen">
-        <div class="status">
-          <span id="modeLabel">DEG</span>
+        <div class="status" aria-live="polite">
           <span id="memLabel" hidden>M</span>
         </div>
         <input
@@ -18,94 +25,167 @@
           id="display"
           value="0"
           readonly
-          aria-label="Calculator display"
+          aria-label="Display"
         />
       </div>
 
+      <!-- Angle mode -->
       <div class="toolbar">
-        <div class="mode" role="radiogroup" aria-label="Angle mode">
-          <label
-            ><input type="radio" name="mode" value="deg" checked /><span
-              >Deg</span
-            ></label
+        <div class="mode" role="group" aria-label="Angle mode">
+          <button
+            type="button"
+            id="degBtn"
+            class="mode-btn active"
+            data-mode="deg"
+            aria-pressed="true"
           >
-          <label
-            ><input type="radio" name="mode" value="rad" /><span
-              >Rad</span
-            ></label
+            Deg
+          </button>
+          <button
+            type="button"
+            id="radBtn"
+            class="mode-btn"
+            data-mode="rad"
+            aria-pressed="false"
           >
+            Rad
+          </button>
         </div>
       </div>
 
       <div class="calculator-body">
+        <!-- Scientific functions -->
         <section class="scientific-panel" aria-label="Scientific functions">
-          <button class="fn" onclick="press('sin(')">sin</button>
-          <button class="fn" onclick="press('cos(')">cos</button>
-          <button class="fn" onclick="press('tan(')">tan</button>
-          <button class="fn" onclick="press('π')">π</button>
-          <button class="fn" onclick="press('e')">e</button>
+          <button class="fn" data-key="sin(" title="Sine">sin</button>
+          <button class="fn" data-key="cos(" title="Cosine">cos</button>
+          <button class="fn" data-key="tan(" title="Tangent">tan</button>
+          <button class="fn" data-key="π" title="Pi">π</button>
+          <button class="fn" data-key="e" title="Euler's number">e</button>
 
-          <button class="fn" onclick="press('asin(')">sin<sup>-1</sup></button>
-          <button class="fn" onclick="press('acos(')">cos<sup>-1</sup></button>
-          <button class="fn" onclick="press('atan(')">tan<sup>-1</sup></button>
-          <button class="fn" onclick="press('(')">(</button>
-          <button class="fn" onclick="press(')')">)</button>
+          <button class="fn" data-key="asin(" aria-label="Inverse sine">
+            sin<sup>-1</sup>
+          </button>
+          <button class="fn" data-key="acos(" aria-label="Inverse cosine">
+            cos<sup>-1</sup>
+          </button>
+          <button class="fn" data-key="atan(" aria-label="Inverse tangent">
+            tan<sup>-1</sup>
+          </button>
+          <button class="fn" data-key="(" aria-label="Open bracket">(</button>
+          <button class="fn" data-key=")" aria-label="Close bracket">)</button>
 
-          <button class="fn" onclick="press('^')">x<sup>y</sup></button>
-          <button class="fn" onclick="press('³')">x<sup>3</sup></button>
-          <button class="fn" onclick="press('²')">x<sup>2</sup></button>
-          <button class="fn" onclick="press('exp(')">e<sup>x</sup></button>
-          <button class="fn" onclick="press('10^')">10<sup>x</sup></button>
+          <button class="fn" data-key="^" aria-label="x to the power y">
+            x<sup>y</sup>
+          </button>
+          <button class="fn" data-key="³" aria-label="Cube">
+            x<sup>3</sup>
+          </button>
+          <button class="fn" data-key="²" aria-label="Square">
+            x<sup>2</sup>
+          </button>
+          <button class="fn" data-key="exp(" aria-label="e to the power x">
+            e<sup>x</sup>
+          </button>
+          <button class="fn" data-key="10^" aria-label="10 to the power x">
+            10<sup>x</sup>
+          </button>
 
-          <button class="fn" onclick="press('yroot')"><sup>y</sup>√x</button>
-          <button class="fn" onclick="press('cbrt(')">∛x</button>
-          <button class="fn" onclick="press('sqrt(')">√x</button>
-          <button class="fn" onclick="press('ln(')">ln</button>
-          <button class="fn" onclick="press('log(')">log</button>
+          <button class="fn" data-key="ʸ√" aria-label="y-th root of x">
+            <sup>y</sup>√x
+          </button>
+          <button class="fn" data-key="cbrt(" aria-label="Cube root">∛x</button>
+          <button class="fn" data-key="sqrt(" aria-label="Square root">
+            √x
+          </button>
+          <button class="fn" data-key="ln(" title="Natural logarithm">
+            ln
+          </button>
+          <button class="fn" data-key="log(" title="Logarithm base 10">
+            log
+          </button>
 
-          <button class="fn" onclick="press('1/')">1/x</button>
-          <button class="fn" onclick="press('%')">%</button>
-          <button class="fn" onclick="press('!')">n!</button>
-          <button class="fn" onclick="randomNumber()">RND</button>
-          <button class="fn" onclick="answer()">Ans</button>
+          <button class="fn" data-key="1/" aria-label="Reciprocal">1/x</button>
+          <button class="fn" data-key="%" title="Percent">%</button>
+          <button class="fn" data-key="!" title="Factorial">n!</button>
+          <button class="fn" data-action="random" title="Random number">
+            RND
+          </button>
+          <button class="fn" data-action="ans" title="Previous answer">
+            Ans
+          </button>
         </section>
 
+        <!-- Numbers and operators -->
         <section class="number-panel" aria-label="Numbers and operators">
-          <button class="num" onclick="press('7')">7</button>
-          <button class="num" onclick="press('8')">8</button>
-          <button class="num" onclick="press('9')">9</button>
-          <button class="op" onclick="press('+')">+</button>
+          <button class="num" data-key="7">7</button>
+          <button class="num" data-key="8">8</button>
+          <button class="num" data-key="9">9</button>
+          <button class="op" data-key="+" aria-label="Add">+</button>
 
-          <button class="num" onclick="press('4')">4</button>
-          <button class="num" onclick="press('5')">5</button>
-          <button class="num" onclick="press('6')">6</button>
-          <button class="op" onclick="press('-')">−</button>
+          <button class="num" data-key="4">4</button>
+          <button class="num" data-key="5">5</button>
+          <button class="num" data-key="6">6</button>
+          <button class="op" data-key="-" aria-label="Subtract">−</button>
 
-          <button class="num" onclick="press('1')">1</button>
-          <button class="num" onclick="press('2')">2</button>
-          <button class="num" onclick="press('3')">3</button>
-          <button class="op" onclick="press('*')">×</button>
+          <button class="num" data-key="1">1</button>
+          <button class="num" data-key="2">2</button>
+          <button class="num" data-key="3">3</button>
+          <button class="op" data-key="*" aria-label="Multiply">×</button>
 
-          <button class="num" onclick="press('0')">0</button>
-          <button class="num" onclick="press('.')">.</button>
-          <button class="op" onclick="press('E')">EXP</button>
-          <button class="op" onclick="press('/')">÷</button>
+          <button class="num" data-key="0">0</button>
+          <button class="num" data-key="." aria-label="Decimal point">.</button>
+          <button
+            class="op"
+            data-key="E"
+            title="Scientific notation (2EXP3 = 2000)"
+          >
+            EXP
+          </button>
+          <button class="op" data-key="/" aria-label="Divide">÷</button>
 
-          <button class="op" onclick="toggleSign()">±</button>
-          <button class="clear" onclick="clearDisplay()">AC</button>
-          <button class="equal" onclick="calculate()">=</button>
+          <button class="op" data-action="sign" aria-label="Change sign">
+            ±
+          </button>
+          <button class="clear" data-action="clear" aria-label="All clear">
+            AC
+          </button>
+          <button class="equal" data-action="equals" aria-label="Equals">
+            =
+          </button>
         </section>
 
+        <!-- Memory and editing -->
         <section class="memory-panel" aria-label="Memory">
-          <button class="mem" onclick="memoryClear()">MC</button>
-          <button class="mem" onclick="memoryRecall()">MR</button>
-          <button class="mem" onclick="memoryAdd()">M+</button>
-          <button class="mem" onclick="memorySub()">M-</button>
-          <button class="mem" onclick="backspace()">Back</button>
+          <button class="mem" data-action="mc" title="Memory clear">MC</button>
+          <button class="mem" data-action="mr" title="Memory recall">MR</button>
+          <button class="mem" data-action="mplus" title="Add to memory">
+            M+
+          </button>
+          <button class="mem" data-action="mminus" title="Subtract from memory">
+            M-
+          </button>
+          <button class="mem" data-action="back" title="Delete last entry">
+            Back
+          </button>
         </section>
       </div>
     </main>
 
-    <script src="calculator.js"></script>
+    <script>
+      calculator.js;
+    </script>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong> Quick Master Calculator</strong>
+          <span>Fast, simple and accurate scientific calculations.</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© Quick Master Calculator</span>
+        <nav class="footer-links" aria-label="Project links"></nav>
+      </div>
+    </footer>
   </body>
 </html>

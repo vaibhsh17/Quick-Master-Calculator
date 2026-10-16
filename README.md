@@ -1,137 +1,164 @@
-<div align="center">
+<h1 align="center">🧮 Quick Master Calculator</h1>
 
-# 🧮 **Quick-Master-Calculator**
-</div>
+<p align="center">
+  A fast, responsive scientific calculator built with plain HTML, CSS and JavaScript.<br />
+  No frameworks, no libraries, no <code>eval()</code>.
+</p>
 
-- Quick-Master-Calculator is a modern, responsive and interactive web-based calculator developed using HTML, CSS and JavaScript.
-- It is designed to perform mathematical calculations quickly and efficiently through a clean and user-friendly interface.
-- The project demonstrates the power of core web technologies by combining structure, styling and functionality into a practical and useful application.
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License" />
+</p>
 
-<div align="center">
+---
 
-# 🚀 **Overview**
-</div>
+## ✨ Features
 
-- This calculator allows users to perform common arithmetic operations with ease.
-- It provides instant results, smooth interaction and a responsive layout that works seamlessly across different devices.
-- The project is lightweight, fast and does not require any external libraries or frameworks.
-- It also serves as a practical front-end project for learning DOM Manipulation, Event Handling and responsive web design.
+**Calculations**
 
-<div align="center">
+- Addition, subtraction, multiplication and division
+- Trigonometry: `sin`, `cos`, `tan` and their inverses `sin⁻¹`, `cos⁻¹`, `tan⁻¹`
+- Powers and roots: `xʸ`, `x²`, `x³`, `eˣ`, `10ˣ`, `ʸ√x`, `∛x`, `√x`
+- Logarithms: `ln` and `log` (base 10)
+- Constants `π` and `e`, plus `1/x`, `%` and factorial `n!`
+- Scientific notation with the `EXP` button (`2EXP3` = 2000)
+- Brackets, implicit multiplication (`2π`, `3sin(30)`) and a forgiving parser that accepts a missing closing bracket
 
-# ✨ **Features**
-</div>
+**Convenience**
 
-- Addition, Subtraction, Multiplication and Division
-- Percentage Calculations
-- Decimal Number Support
-- Real-Time Input and Output
-- Clear and Delete Functions
-- Responsive Design for Mobile, Tablet and Desktop
-- Clean and Modern User Interface
-- Fast and Lightweight Performance
-- Easy-to-Understand Code Structure
+- **Deg / Rad toggle** that applies to every trig function and inverse trig function
+- Memory keys: `MC`, `MR`, `M+`, `M-`, with an `M` indicator on the display
+- `Ans` (previous answer), `RND` (random number), `±` (change sign), `Back` and `AC`
+- Full keyboard support
+- Starting a new number after `=` clears the old result, while an operator continues from it
 
-<div align="center">
+**Design and quality**
 
-# 🛠 **Technologies Used**
-</div>
+- Responsive layout for desktop, tablet and mobile
+- Accessible markup with `aria-label`s, tooltips and visible focus states
+- Clean Deg / Rad toggle that clearly shows the active mode
+- Small, readable code with a single click handler for all buttons
 
-- **HTML5** – Structure and layout of the calculator.
-- **CSS3** – Styling, responsiveness and visual appearance.
-- **JavaScript (ES6)** – Calculation logic and user interactions.
+---
 
-<div align="center">
+## 🖼️ Preview
 
-# 📂 **Project Structure**
-</div>
+<!-- Add a screenshot named screenshot.png to the project folder, then remove the comment markers below:
+![Quick Master Calculator screenshot](screenshot.png)
+-->
 
+---
+
+## 🚀 Getting Started
+
+No installation or build step is needed.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/vaibhav-dev1707/Quick-Master-Calculator.git
+
+# 2. Open the project folder
+cd Quick-Master-Calculator
 ```
-Quick-Master-Calculator/ 
-│ 
-├── calculator.html 
-├── calculator.css 
-├── calculator.js 
-├── contributors.md
-└── LICENCE
+
+Then open `calculator.html` in any modern browser.
+
+---
+
+## 🧪 Usage Examples
+
+| You type       | Mode | Result                   |
+| -------------- | ---- | ------------------------ |
+| `sin(90)`      | Deg  | `1`                      |
+| `sin(π/2)`     | Rad  | `1`                      |
+| `asin(1)`      | Deg  | `90`                     |
+| `asin(1)`      | Rad  | `1.5707963268`           |
+| `5!`           | any  | `120`                    |
+| `sqrt(144)`    | any  | `12`                     |
+| `log(1000)`    | any  | `3`                      |
+| `3` `ʸ√x` `27` | any  | `3` (the 3rd root of 27) |
+| `2EXP3`        | any  | `2000`                   |
+| `50%`          | any  | `0.5`                    |
+| `2π`           | any  | `6.28318530718`          |
+
+> **Tip:** the angle mode is read when you press `=`. Pick Deg or Rad first, then calculate.
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+| Key                 | Action                       |
+| ------------------- | ---------------------------- |
+| `0-9` `.`           | Enter numbers                |
+| `+` `-` `*` `/` `^` | Operators                    |
+| `(` `)` `!` `%`     | Brackets, factorial, percent |
+| `Enter` or `=`      | Calculate                    |
+| `Backspace`         | Delete the last entry        |
+| `Esc`               | Clear everything             |
+
+---
+
+## 🧠 How It Works
+
+1. Button clicks (and key presses) build an expression string such as `sin(30)+2π`.
+2. When you press `=`, a small **recursive-descent parser** reads the expression token by token. It handles operator precedence, brackets, postfix operators (`!`, `%`, `²`, `³`) and functions, and it never uses `eval()` or `new Function()`.
+3. Trigonometric functions convert angles according to the current Deg / Rad mode, and tiny floating-point noise such as `sin(180) = 1.2e-16` is snapped to `0`.
+4. Invalid input, division by zero and undefined values (such as `tan(90°)`) show `Error`.
+
+---
+
+## 📂 Project Structure
+
+```text
+Quick-Master-Calculator/
+├── calculator.html   # Page structure and buttons
+├── calculator.css    # Layout, theme and responsive styles
+├── calculator.js     # Parser, calculator logic and event handling
+├── LICENSE
+└── README.md
 ```
 
-<div align="center">
+---
 
-# ⚙️ **How It Works**
-</div>
+## 🛠 Built With
 
-- The user clicks the calculator buttons.
-- JavaScript captures the input and displays it on the screen.
-- Mathematical expressions are processed dynamically.
-- The result is calculated instantly when the equals (=) button is pressed.
-- The clear function resets the display for a new calculation.
+- **HTML5**: semantic structure and data attributes for buttons
+- **CSS3**: Grid, custom properties (variables) and media queries
+- **JavaScript (ES6)**: expression parser, memory, keyboard input
 
-<div align="center">
+---
 
-# 📱 **Responsive Design**
-</div>
+## 🔮 Roadmap
 
-- The calculator is fully responsive and adapts automatically to different screen sizes.
-- Whether accessed on a desktop, laptop, tablet or smartphone, the interface remains clean, accessible and easy to use.
+- [ ] Calculation history
+- [ ] Dark / light theme toggle
+- [ ] Copy-result button
+- [ ] Automated tests for the parser
 
-<div align="center">
+---
 
-# 🎯 **Educational Value**
-</div>
+## 🤝 Contributing
 
-- **This project is an excellent learning resource for beginners who want to understand :**
+Contributions, bug reports and ideas are welcome.
 
-  - DOM Manipulation
-  - Event Handling
-  - JavaScript Functions
-  - Responsive Web Design
-  - User Interface Development
-  - Front-End Project Structure
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add: your feature"`
+4. Push the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
-# 💡 **Why This Project Is Useful :**
+Adding a new button is simple: add a `<button>` with `data-key="..."` (or `data-action="..."`) in `calculator.html`, and for a new function also add it to `FUNCS` in `calculator.js`.
 
-- The **[Quick-Master-Calculator](https://github.com/vaibhsh17/Quick-Master-Calculator)** project, simplifies everyday calculations while serving as a practical example of front-end web development.
-- It helps developers understand how HTML, CSS and JavaScript work together to build real-world applications.
+---
 
-<div align="center">
+## 📄 License
 
-# 🔮 **Future Enhancements**
-</div>
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
 
-- Scientific Calculator Functions
-- Calculation History
-- Keyboard Support
-- Dark/Light Theme Toggle
-- Memory Functions (M+, M-, MR, MC)
-- Advanced Mathematical Operations
+---
 
-<div align="center">
+## 👤 Author
 
-# 🤝 **Contributions**
-</div>
-
-- 👍 Contributions, suggestions and improvements are welcome to feel free to fork the repository, create a new branch and submit a pull request.
-
-<div align="center">
-
-# 💬 **Purpose To Make This Project**
-</div>
-
-- Quick-Master-Calculator started as a simple project to practice HTML, CSS and JavaScript. It helps to understand how structure, styling, and functionality work together to create a useful web application.
-- This project reflects my learning journey in front-end development while providing a fast and responsive calculator for everyday use.
-
-<div align="center">
-
-# 📄 **License**
-</div>
-
-- The project **[Quick-Master-Calculator](https://github.com/vaibhsh17/Quick-Master-Calculator)** is open-source and available for educational and learning purposes.
-- See [LICENCE](https://github.com/vaibhsh17/Quick-Master-Calculator/blob/main/LICENSE) file for more details.
-
-<div align="center">
-
-# 👨‍💻 **Author**
-</div>
-
-- Built and maintained by - **[Vaibhav](https://github.com/vaibhsh17/vaibhsh17)**
+**Vaibhav** · [@vaibhav-dev1707](https://github.com/vaibhav-dev1707)
