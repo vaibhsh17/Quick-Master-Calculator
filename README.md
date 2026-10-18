@@ -51,9 +51,7 @@
 ## 🖼️ Preview
 </div>
 
-<!-- Add a screenshot named screenshot.png to the project folder, then remove the comment markers below:
-![Quick Master Calculator screenshot](screenshot.png)
--->
+
 
 ---
 
@@ -76,7 +74,10 @@ Then open `calculator.html` in any modern browser.
 
 ---
 
+<div align="center">
+
 ## 🧪 Usage Examples
+</div>
 
 | You type       | Mode | Result                   |
 | -------------- | ---- | ------------------------ |
@@ -96,7 +97,10 @@ Then open `calculator.html` in any modern browser.
 
 ---
 
+<div align="center">
+
 ## ⌨️ Keyboard Shortcuts
+</div>
 
 | Key                 | Action                       |
 | ------------------- | ---------------------------- |
@@ -121,7 +125,10 @@ Then open `calculator.html` in any modern browser.
 
 ---
 
+<div align="center">
+
 ## 📂 Project Structure
+</div>
 
 ```text
 Quick-Master-Calculator/
@@ -134,7 +141,10 @@ Quick-Master-Calculator/
 
 ---
 
+<div align="center">
+
 ## 🛠 Built With
+</div>
 
 - **HTML5**: semantic structure and data attributes for buttons
 - **CSS3**: Grid, custom properties (variables) and media queries
@@ -142,7 +152,10 @@ Quick-Master-Calculator/
 
 ---
 
+<div align="center">
+
 ## 🔮 Roadmap
+</div>
 
 - [ ] Calculation history
 - [ ] Dark / light theme toggle
@@ -151,7 +164,10 @@ Quick-Master-Calculator/
 
 ---
 
+<div align="center">
+
 ## 🤝 Contributing
+</div>
 
 Contributions, bug reports and ideas are welcome.
 
@@ -165,12 +181,18 @@ Adding a new button is simple: add a `<button>` with `data-key="..."` (or `data-
 
 ---
 
+<div align="center">
+
 ## 📄 License
+</div>
 
 This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
-## 👤 Author
+<div align="center">
 
-**Vaibhav** · [@vaibhav-dev1707](https://github.com/vaibhav-dev1707)
+## 👤 Author
+</div>
+
+**Vaibhav** - [@vaibhav-dev1707](https://github.com/vaibhav-dev1707)
