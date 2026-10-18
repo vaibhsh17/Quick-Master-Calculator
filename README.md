@@ -14,7 +14,10 @@
 
 ---
 
+<div align="center">
+
 ## ✨ Features
+</div>
 
 **Calculations**
 
@@ -43,7 +46,10 @@
 
 ---
 
+<div align="center">
+
 ## 🖼️ Preview
+</div>
 
 <!-- Add a screenshot named screenshot.png to the project folder, then remove the comment markers below:
 ![Quick Master Calculator screenshot](screenshot.png)
@@ -51,7 +57,10 @@
 
 ---
 
+<div align="center">
+
 ## 🚀 Getting Started
+</div>
 
 No installation or build step is needed.
 
@@ -100,7 +109,10 @@ Then open `calculator.html` in any modern browser.
 
 ---
 
+<div align="center">
+
 ## 🧠 How It Works
+</div>
 
 1. Button clicks (and key presses) build an expression string such as `sin(30)+2π`.
 2. When you press `=`, a small **recursive-descent parser** reads the expression token by token. It handles operator precedence, brackets, postfix operators (`!`, `%`, `²`, `³`) and functions, and it never uses `eval()` or `new Function()`.
