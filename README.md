@@ -177,7 +177,7 @@ Contributions, bug reports and ideas are welcome.
 4. Push the branch: `git push origin feature/your-feature`
 5. Open a Pull Request
 
-Adding a new button is simple: add a `<button>` with `data-key="..."` (or `data-action="..."`) in `calculator.html`, and for a new function also add it to `FUNCS` in `calculator.js`.
+- Adding a new button is simple: add a `<button>` with `data-key="..."` (or `data-action="..."`) in `calculator.html`, and for a new function also add it to `FUNCS` in `calculator.js`.
 
 ---
 
@@ -195,4 +195,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE)
 ## 👤 Author
 </div>
 
-**Vaibhav** - [@vaibhav-dev1707](https://github.com/vaibhav-dev1707)
+This project is maintained by - **[@vaibhav-dev1707](https://github.com/vaibhav-dev1707)**
