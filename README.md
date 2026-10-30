@@ -16,11 +16,17 @@
 
 A modern, responsive, and feature-rich scientific calculator built using HTML, CSS, and JavaScript. Designed to make mathematical calculations easier with a clean interface, scientific functions, keyboard support, and a smooth user experience.
 
-🚀 Overview
+<div align="center">
+
+## 🚀 Overview
+</div>
 
 Quick Master Calculator is a lightweight web-based scientific calculator that supports basic arithmetic operations as well as advanced mathematical functions. It provides accurate calculations through a custom expression evaluator without relying on external libraries or frameworks. With its responsive layout, interactive buttons, and keyboard support, it offers a convenient calculation experience across different devices.
 
-✨ Features
+<div align="center">
+
+## ✨ Features
+</div>
 
 🔢 Basic Calculations
 
@@ -122,7 +128,10 @@ JavaScript (ES6)
 
 Calculation logic and interactivity
 
+<div align="center">
+
 📂 Project Structure
+</div>
 
 Quick-Master-Calculator/
 │
@@ -131,7 +140,10 @@ Quick-Master-Calculator/
 ├── calculator.js
 └── README.md
 
-⚙️ How It Works
+<div align="center">
+
+## ⚙️ How It Works
+</div>
 
 Users can enter numbers and mathematical expressions using calculator buttons or their keyboard.
 
