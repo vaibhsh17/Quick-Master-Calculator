@@ -66,27 +66,20 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 - Backspace to delete the last entry
 - Escape to clear the display
 
-📱 Responsive Design
+**📱 Responsive Design**
 
-Desktop and laptop support
+- Desktop and laptop support
+- Tablet-friendly layout
+- Mobile-friendly interface
+- Adaptive calculator layout for smaller screens
 
-Tablet-friendly layout
+**🎨 User Interface**
 
-Mobile-friendly interface
-
-Adaptive calculator layout for smaller screens
-
-🎨 User Interface
-
-Clean and organized layout
-
-Simple button arrangement
-
-Interactive button effects
-
-Readable calculation display
-
-Consistent color theme
+- Clean and organized layout
+- Simple button arrangement
+- Interactive button effects
+- Readable calculation display
+- Consistent color theme
 
 🛠 Technologies Used
 
