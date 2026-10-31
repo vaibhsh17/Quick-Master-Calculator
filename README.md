@@ -50,7 +50,7 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 - Factorial (n!)
 - Mathematical Constants (π and e)
 
-🧠 Memory & Additional Functions
+**🧠 Memory & Additional Functions**
 
 - Memory Clear (MC)
 - Memory Recall (MR)
@@ -81,7 +81,10 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 - Readable calculation display
 - Consistent color theme
 
-🛠 Technologies Used
+<div align="center">
+
+## 🛠 Technologies Used
+</div>
 
 Technology
 
