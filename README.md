@@ -87,19 +87,12 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 </div>
 
 Technology
-
 Purpose
-
 HTML5
-
 Structure and layout
-
 CSS3
-
 Styling and responsive design
-
 JavaScript (ES6)
-
 Calculation logic and interactivity
 
 <div align="center">
@@ -107,12 +100,14 @@ Calculation logic and interactivity
 📂 Project Structure
 </div>
 
+```
 Quick-Master-Calculator/
 │
 ├── calculator.html
 ├── calculator.css
 ├── calculator.js
 └── README.md
+```
 
 <div align="center">
 
