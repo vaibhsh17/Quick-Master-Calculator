@@ -28,19 +28,14 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 ## ✨ Features
 </div>
 
-🔢 Basic Calculations
+**🔢 Basic Calculations**
 
-Addition, Subtraction, Multiplication, and Division
-
-Percentage Calculations
-
-Decimal Number Support
-
-Positive and Negative Number Toggle
-
-Clear (AC) and Backspace Functions
-
-Scientific Notation (EXP)
+- Addition, Subtraction, Multiplication, and Division
+- Percentage Calculations
+- Decimal Number Support
+- Positive and Negative Number Toggle
+- Clear (AC) and Backspace Functions
+- Scientific Notation (EXP)
 
 🔬 Scientific Functions
 
