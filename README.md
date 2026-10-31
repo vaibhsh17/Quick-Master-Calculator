@@ -37,51 +37,34 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 - Clear (AC) and Backspace Functions
 - Scientific Notation (EXP)
 
-🔬 Scientific Functions
+**🔬 Scientific Functions**
 
-Trigonometric Functions (sin, cos, tan)
-
-Inverse Trigonometric Functions (sin⁻¹, cos⁻¹, tan⁻¹)
-
-Degree (DEG) and Radian (RAD) Modes
-
-Square and Cube
-
-Power and Root Calculations
-
-Square Root and Cube Root
-
-Natural Logarithm (ln) and Common Logarithm (log)
-
-Exponential Functions (eˣ and 10ˣ)
-
-Factorial (n!)
-
-Mathematical Constants (π and e)
+- Trigonometric Functions (sin, cos, tan)
+- Inverse Trigonometric Functions (sin⁻¹, cos⁻¹, tan⁻¹)
+- Degree (DEG) and Radian (RAD) Modes
+- Square and Cube
+- Power and Root Calculations
+- Square Root and Cube Root
+- Natural Logarithm (ln) and Common Logarithm (log)
+- Exponential Functions (eˣ and 10ˣ)
+- Factorial (n!)
+- Mathematical Constants (π and e)
 
 🧠 Memory & Additional Functions
 
-Memory Clear (MC)
+- Memory Clear (MC)
+- Memory Recall (MR)
+- Memory Addition (M+)
+- Memory Subtraction (M-)
+- Random Number Generation (RND)
+- Previous Answer Recall (Ans)
 
-Memory Recall (MR)
+**⌨️ Keyboard Support**
 
-Memory Addition (M+)
-
-Memory Subtraction (M-)
-
-Random Number Generation (RND)
-
-Previous Answer Recall (Ans)
-
-⌨️ Keyboard Support
-
-Number and operator input
-
-Enter or = to calculate
-
-Backspace to delete the last entry
-
-Escape to clear the display
+- Number and operator input
+- Enter or = to calculate
+- Backspace to delete the last entry
+- Escape to clear the display
 
 📱 Responsive Design
 
