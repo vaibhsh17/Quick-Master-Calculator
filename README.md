@@ -86,14 +86,10 @@ Quick Master Calculator is a lightweight web-based scientific calculator that su
 ## 🛠 Technologies Used
 </div>
 
-Technology
-Purpose
-HTML5
-Structure and layout
-CSS3
-Styling and responsive design
-JavaScript (ES6)
-Calculation logic and interactivity
+**Technology Purpose**:
+HTML5 - Structure and layout
+CSS3 - Styling and responsive design
+JavaScript (ES6) - Calculation logic and interactivity
 
 <div align="center">
 
