@@ -110,17 +110,12 @@ Quick-Master-Calculator/
 ## ⚙️ How It Works
 </div>
 
-Users can enter numbers and mathematical expressions using calculator buttons or their keyboard.
-
-JavaScript handles user input and manages the current mathematical expression.
-
-A custom expression evaluator processes mathematical operations and scientific functions.
-
-The calculator calculates and displays the result when the equals (=) button is pressed.
-
-Memory functions allow users to store, recall, add, and subtract values.
-
-DEG and RAD modes control how trigonometric functions interpret angles.
+- Users can enter numbers and mathematical expressions using calculator buttons or their keyboard.
+- JavaScript handles user input and manages the current mathematical expression.
+- A custom expression evaluator processes mathematical operations and scientific functions.
+- The calculator calculates and displays the result when the equals (=) button is pressed.
+- Memory functions allow users to store, recall, add, and subtract values.
+- DEG and RAD modes control how trigonometric functions interpret angles.
 
 💡 Project Motivation
 
@@ -154,22 +149,31 @@ More Advanced Mathematical Operations
 
 Clone the repository:
 
+```
 git clone https://github.com/vaibhsh17/Quick-Master-Calculator.git
+```
 
-Open the project folder.
+- Open the project folder.
+- Run calculator.html in your web browser.
+- Start calculating!
 
-Run calculator.html in your web browser.
+<div align="center">
 
-Start calculating!
-
-🤝 Contributions
+## 🤝 Contributions
+</div>
 
 Suggestions, feedback, and improvements are always welcome. Feel free to explore the project and share ideas for making it better.
 
-📄 License
+<div align="center">
+
+## 📄 License
+</div>
 
 This project is available for educational and learning purposes.
 
-👨‍💻 Author
+<div align="center">
+
+## 👨‍💻 Author
+</div>
 
 This project is maintained by - **[Vaibhav](https://github.com/vaibhsh17)**.
