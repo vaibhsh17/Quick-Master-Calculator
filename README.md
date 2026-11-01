@@ -172,8 +172,4 @@ This project is available for educational and learning purposes.
 
 👨‍💻 Author
 
-Vaibhav
-
-A BCA student interested in coding, web development, and building practical projects.
-
-Built and maintained by Vaibhav, for those who believe in learning through structuring, styling, and functionality.
+This project is maintained by - **[Vaibhav](https://github.com/vaibhsh17)**.
