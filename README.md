@@ -162,7 +162,7 @@ Suggestions, feedback and improvements are always welcome. Feel free to explore 
 </div>
 
 - This project is available for educational and learning purposes.
-- See [LICENSE](https://github.com/vaibhsh17/Quick-Master-Calculator/blob/main/LICENSE)
+- See [LICENSE](https://github.com/vaibhsh17/Quick-Master-Calculator/blob/main/LICENSE) for more details.
 
 <div align="center">
 
