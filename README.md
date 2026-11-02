@@ -154,7 +154,7 @@ git clone https://github.com/vaibhsh17/Quick-Master-Calculator.git
 ## 🤝 Contributions
 </div>
 
-Suggestions, feedback, and improvements are always welcome. Feel free to explore the project and share ideas for making it better.
+Suggestions, feedback and improvements are always welcome. Feel free to explore the project and share ideas for making it better.
 
 <div align="center">
 
