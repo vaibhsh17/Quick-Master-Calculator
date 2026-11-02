@@ -123,19 +123,19 @@ Quick Master Calculator started as a learning project to explore HTML, CSS, and 
 
 ## 🌍 Real-World Applications
 
-Performing everyday mathematical calculations
-Solving basic and advanced mathematical expressions
-Practising scientific and trigonometric calculations
-Helping students with mathematical operations
-Understanding how interactive web applications work
+- Performing everyday mathematical calculations
+- Solving basic and advanced mathematical expressions
+- Practising scientific and trigonometric calculations
+- Helping students with mathematical operations
+- Understanding how interactive web applications work
 
 ## 🔮 Future Improvements
 
-Calculation History
-Dark and Light Theme
-Improved Scientific Functions
-Enhanced Accessibility
-More Advanced Mathematical Operations
+- Calculation History
+- Dark and Light Theme
+- Improved Scientific Functions
+- Enhanced Accessibility
+- More Advanced Mathematical Operations
 
 🚀 Getting Started
 
