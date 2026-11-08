@@ -137,7 +137,10 @@ Quick Master Calculator started as a learning project to explore HTML, CSS, and 
 - Enhanced Accessibility
 - More Advanced Mathematical Operations
 
-🚀 Getting Started
+<div align="center">
+
+## 🚀 Getting Started
+</div>
 
 Clone the repository:
 
