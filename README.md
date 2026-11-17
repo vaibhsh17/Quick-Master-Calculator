@@ -131,7 +131,10 @@ Quick Master Calculator started as a learning project to explore HTML, CSS, and 
 - Helping students with mathematical operations
 - Understanding how interactive web applications work
 
+<div align="center">
+
 ## 🔮 Future Improvements
+</div>
 
 - Calculation History
 - Dark and Light Theme
