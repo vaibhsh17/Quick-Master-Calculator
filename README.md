@@ -147,7 +147,7 @@ Quick Master Calculator started as a learning project to explore HTML, CSS, and 
 ## 🚀 Getting Started
 </div>
 
-Clone the repository:
+**Clone the repository:**
 
 ```
 git clone https://github.com/vaibhsh17/Quick-Master-Calculator.git
