@@ -121,8 +121,10 @@ Quick-Master-Calculator/
 
 Quick Master Calculator started as a learning project to explore HTML, CSS, and JavaScript beyond basic web pages. While building it, I learned how to handle user interactions, process mathematical expressions, implement scientific functions, and create responsive layouts. It represents my practical learning experience in front-end development.
 
-## 🌍 Real-World Applications
+<div align="center">
 
+## 🌍 Real-World Applications
+</div>
 - Performing everyday mathematical calculations
 - Solving basic and advanced mathematical expressions
 - Practising scientific and trigonometric calculations
